@@ -1,20 +1,21 @@
 <template>
   <div id="app">
-
+    <Todos v-bind:todolist="todolist" />
   </div>
 </template>
 
 <script>
+  import Todos from "./components/Todos.vue"
 
 export default {
   name: 'app',
   components: {
-
+    Todos
 
   },
   data() {
     return {
-      todoList: [
+      todolist: [
         {
           id : 1,
           title: "wash dishes",
