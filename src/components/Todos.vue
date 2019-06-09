@@ -1,8 +1,8 @@
 <template>
   <div>
     <h1>Daily todos</h1>
-    <div v-for="todo in todolist">
-        <h3> {{todo.title}}</h3>
+    <div v-bind:key="todo.id" v-for="todo in todolist">
+        <TodoItem v-bind:todo="todo"/>
 
     </div>
   </div>
@@ -12,11 +12,15 @@
 </template>
 
 <script>
+   import TodoItem from  "./TodoItem.vue"
+
+
   export default {
     name: "Todos",
+    components: {
+      TodoItem
+    },
     props: ["todolist"]
-
-
   }
 
 

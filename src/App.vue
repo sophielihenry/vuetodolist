@@ -11,7 +11,6 @@ export default {
   name: 'app',
   components: {
     Todos
-
   },
   data() {
     return {
@@ -26,7 +25,7 @@ export default {
           title: "clean room",
           completed: false
        }
-      ]
+      ],
     }
   }
 }
