@@ -1,16 +1,19 @@
 <template>
   <div id="app">
+    <AddTodo v-on:add-todo="addTodo" />
     <Todos v-bind:todolist="todolist" v-on:delete-todo="deleteTodo"/>
   </div>
 </template>
 
 <script>
   import Todos from "./components/Todos.vue"
+  import AddTodo from "./components/AddTodo.vue"
 
 export default {
   name: 'app',
   components: {
-    Todos
+    Todos,
+    AddTodo
   },
   data() {
     return {
@@ -31,6 +34,9 @@ export default {
     methods: {
         deleteTodo(id) {
           this.todolist = this.todolist.filter( todo => todo.id !== id )
+        },
+        addTodo(newTodo) {
+          this.todolist = [...this.todolist, newTodo]
         }
       }
 }
