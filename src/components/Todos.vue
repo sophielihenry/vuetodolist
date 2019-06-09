@@ -2,7 +2,7 @@
   <div>
     <h1>Daily todos</h1>
     <div v-bind:key="todo.id" v-for="todo in todolist">
-        <TodoItem v-bind:todo="todo"/>
+        <TodoItem v-bind:todo="todo" v-on:delete-todo="$emit('delete-todo', todo.id)"/>
 
     </div>
   </div>
