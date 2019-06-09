@@ -23,7 +23,6 @@
           title: this.title,
           completed: false
         }
-
         this.$emit('add-todo', newTodo);
         this.title = " ";
       }
@@ -31,9 +30,7 @@
   }
 </script>
 
-
 <style scoped>
-
 </style>
 
 
